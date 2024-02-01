@@ -1,0 +1,8 @@
+h1 {
+    border: red 3px solid;
+    color: blue;
+}
+.important_information {
+    margin-left: 20px;
+    color: crimson;
+}
