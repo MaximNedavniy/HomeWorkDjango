@@ -1,0 +1,11 @@
+{% extends 'notes_page.html' %}
+
+
+{% block content %}
+    <h3>Create New Note</h3>
+    <form method="post">
+    {%  csrf_token %}
+        {{ form.as_div }}
+    <button type="submit">Submit</button>
+    </form>
+        {% endblock %}

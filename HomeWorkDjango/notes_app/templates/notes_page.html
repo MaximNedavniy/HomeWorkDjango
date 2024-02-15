@@ -1,19 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Main_page</title>
-    <link rel ="stylesheet" href="static/css/base.css">
-</head>
-<body>
-    <h1>Hello from Main Page</h1>
+{% extends 'main_page.html' %}
+{% block content %}
+    <a href="{% url 'create_new_note' %}">Create New</a>
+    <h1>Нотатки</h1>
 
     <section>
-        <h2>Important Information</h2>
+        <h2>Мої нотатки:</h2>
         <ul class="important_information">
             {% for note in notes %}
             <li>{{ note.title }} - {{ note.text }}</li>
         {% endfor %}
+         <form method="post">
+    {%  csrf_token %}
+        {{ form.as_div }}
+    <button type="submit">Видалити</button>
+    </form>
         </ul>
     </section>
+{% endblock %}
 </body>
 </html>
